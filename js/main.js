@@ -50,6 +50,10 @@ const products = [
 	new Product('Cereal Bowl', 'Bnfo-UWJgB8', 5.35, 'A medium cereal bowl'),
 ];
 
+// Adjust cart count
+const cartCount = document.querySelector('.cart__count');
+cartCount.textContent = cart.count() == 0 ? '' : cart.count();
+
 const container = document.querySelector('.products .container');
 
 // Add product to webshop page
@@ -151,4 +155,21 @@ products.forEach((p) => {
 
 	// append card to container
 	container.appendChild(card);
+});
+
+// Event listeners
+container.addEventListener('click', (e) => {
+	let target = e.target;
+
+	if (target.classList.contains('fa-plus-circle'))
+		target = e.target.parentElement;
+
+	if (target.classList.contains('card__options__add')) {
+		const name =
+			target.parentElement.previousElementSibling.children[0].textContent;
+		const product = products.find((p) => p.name === name);
+
+		cart.products.push(product);
+		cartCount.textContent++;
+	}
 });

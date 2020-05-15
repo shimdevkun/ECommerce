@@ -8,7 +8,7 @@ const cart = {
 		this.products.forEach((p) => {
 			total += p.price;
 		});
-		return total;
+		return total.toFixed(2);
 	},
 };
 
@@ -119,7 +119,7 @@ products.forEach((p) => {
 
 	// create card options quickview
 	const cardOptionsQuickview = document.createElement('p');
-	cardOptionsQuickview.classList.add('card__options_quickview');
+	cardOptionsQuickview.classList.add('card__options__quickview');
 
 	// create quickview icon
 	const quickviewIcon = document.createElement('i');
@@ -158,6 +158,9 @@ products.forEach((p) => {
 });
 
 // Event listeners
+const cartContentList = document.querySelector('.cart-content__list');
+const cartContentPrice = document.querySelector('.cart-content__price');
+
 container.addEventListener('click', (e) => {
 	let target = e.target;
 
@@ -171,5 +174,37 @@ container.addEventListener('click', (e) => {
 
 		cart.products.push(product);
 		cartCount.textContent++;
+
+		// create li for cart content list
+		const li = document.createElement('li');
+		li.textContent = `- ${name}`;
+		cartContentList.appendChild(li);
+
+		// update price
+		cartContentPrice.textContent = `$${cart.totalPrice()}`;
+	}
+});
+
+const cartDOM = document.querySelector('.cart');
+const cartContent = document.querySelector('.cart-content');
+
+cartDOM.addEventListener('click', () => {
+	const styles = window.getComputedStyle(cartContent);
+
+	cartContent.style.visibility =
+		styles.visibility == 'hidden' ? 'visible' : 'hidden';
+});
+
+document.addEventListener('click', (e) => {
+	if (
+		!(
+			e.target.classList.contains('fa-shopping-cart') ||
+			e.target.classList.contains('cart__count') ||
+			e.target.classList.contains('cart__link')
+		)
+	) {
+		if (cartContent.style.visibility === 'visible') {
+			cartContent.style.visibility = 'hidden';
+		}
 	}
 });

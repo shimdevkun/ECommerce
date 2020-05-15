@@ -71,6 +71,7 @@ nav li {
 /* Products */
 .products {
 	padding: 2em 0;
+	position: relative;
 }
 
 .card {
@@ -108,6 +109,21 @@ nav li {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.card__options__add,
+.card__options__quickview {
+	cursor: pointer;
+}
+
+.cart-content {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+
+	background: var(--header);
+	padding: 1.5em 2em;
+	visibility: hidden;
 }
 
 /* Media Queries */
@@ -161,16 +177,3 @@ nav li {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
-
-/* exp */
-/* .card__body {
-	border: 1px solid red;
-}
-
-.card__info {
-	border: 1px solid blue;
-}
-
-.card__options {
-	border: 1px solid green;
-} */

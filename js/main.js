@@ -122,8 +122,9 @@ products.forEach((p) => {
 	quickviewIcon.className = 'far fa-question-circle';
 
 	// append icon to option
-	cardOptionsQuickview.textContent = 'Quickview ';
+	const quickview = document.createTextNode(' Quickview');
 	cardOptionsQuickview.appendChild(quickviewIcon);
+	cardOptionsQuickview.appendChild(quickview);
 
 	// create card options add
 	const cardOptionsAdd = document.createElement('a');

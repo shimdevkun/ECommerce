@@ -132,6 +132,7 @@ nav li {
 		grid-template-columns: 1fr 1fr;
 		row-gap: 2em;
 		column-gap: 2em;
+		align-items: flex-start;
 	}
 
 	.card {
@@ -160,3 +161,16 @@ nav li {
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 }
+
+/* exp */
+/* .card__body {
+	border: 1px solid red;
+}
+
+.card__info {
+	border: 1px solid blue;
+}
+
+.card__options {
+	border: 1px solid green;
+} */

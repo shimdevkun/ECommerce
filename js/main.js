@@ -161,6 +161,15 @@ products.forEach((p) => {
 const cartContentList = document.querySelector('.cart-content__list');
 const cartContentPrice = document.querySelector('.cart-content__price');
 
+const productQuickview = document.querySelector('.product-quickview');
+const productQuickviewTitle = document.querySelector(
+	'.product-quickview__title'
+);
+const productQuickviewImg = document.querySelector('.product-quickview__img');
+const productQuickviewDescription = document.querySelector(
+	'.product-quickview__description'
+);
+
 container.addEventListener('click', (e) => {
 	let target = e.target;
 
@@ -182,6 +191,23 @@ container.addEventListener('click', (e) => {
 
 		// update price
 		cartContentPrice.textContent = `$${cart.totalPrice()}`;
+	}
+
+	if (target.classList.contains('fa-question-circle')) {
+		target = target.parentElement;
+	}
+
+	if (target.classList.contains('card__options__quickview')) {
+		productQuickview.style.visibility = 'visible';
+		const product = products.find(
+			(p) =>
+				p.name ===
+				target.parentElement.previousElementSibling.children[0].textContent
+		);
+		productQuickviewTitle.textContent = product.name;
+		productQuickviewImg.src = product.url;
+		productQuickviewImg.alt = product.name;
+		productQuickviewDescription.textContent = product.description;
 	}
 });
 
@@ -207,4 +233,14 @@ document.addEventListener('click', (e) => {
 			cartContent.style.visibility = 'hidden';
 		}
 	}
+
+	// TODO: close productQuickview if user clicks outside
+});
+
+const productQuickviewClose = document.querySelector(
+	'.product-quickview__close'
+);
+
+productQuickviewClose.addEventListener('click', () => {
+	productQuickview.style.visibility = 'hidden';
 });

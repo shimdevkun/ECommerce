@@ -2,7 +2,7 @@
 
 This is an ecommerce site page recreation inspired by this [codepen](https://codepen.io/RSH87/pen/RagqEv)
 
-See the live version [here](ecommerce.xstrafez.now.sh)
+See the live version [here](https://ecommerce.xstrafez.now.sh/)
 
 ## Versions
 

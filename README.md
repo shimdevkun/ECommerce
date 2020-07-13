@@ -1,8 +1,8 @@
 # ECommerce Replication
 
-This is an ecommerce site page recreation inspired by this [codepen](https://codepen.io/RSH87/pen/RagqEv)
+This is an ecommerce site recreation inspired by this [codepen](https://codepen.io/RSH87/pen/RagqEv)
 
-See the live version [here](https://ecommerce.xstrafez.now.sh/)
+See the live version [here](https://ecommerce.sshimabuku.now.sh/)
 
 ## Versions
 
@@ -15,12 +15,11 @@ See the live version [here](https://ecommerce.xstrafez.now.sh/)
 - See current cart products
 - See cart count and total price
 
-## Please note
+## Incoming features
 
-This project is ongoing and far from being finished.
+1. User can delete products from cart.
 
-Here's a list of high priority incoming features/bugfixes:
+## Known Issues
 
-- Quickview and add options stand out on hover
-- Product quickview will hide when user clicks on cart icon
-- User can delete a product from the cart
+1. Quickview and add options stand out on hover.
+2. Product quickview will hide when user clicks on cart icon.
